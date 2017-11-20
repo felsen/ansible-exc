@@ -1,0 +1,15 @@
+- name: "Installing VIM"
+  apt: pkg={{ item }} state=installed
+  with_items:
+  - dnsutils
+  - git
+  - vim
+  - ntp
+  - at
+  - lvm2
+
+#- name: "Adding bashrc"
+#  copy: src=../files/bash.bashrc dest=/etc/bash.bashrc owner=root group=root mode=0644
+
+#- name: "Removing bashrc"
+#  shell: creates=/root/.bashrc_backup mv /root/.bashrc /root/.bashrc_backup

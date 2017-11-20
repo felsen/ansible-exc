@@ -1,0 +1,30 @@
+What is it?
+     - Configuration Management Tool
+     - Server Configuration
+     - Maintained by RedHat
+     - Essentially free and Open Source
+     - Control Machine....
+     - ....Plus SSH access
+
+
+## To test the host in the hosts file.
+ansible -m ping all
+
+## Check the hostname of the remote system using ansible
+ansible -m shell -a 'hostname' all
+
+## Check the disk usage.
+ansible -m shell -a 'df -h' all
+
+## Add the new user.
+ansible -b -K -m user -a 'name=testuser' all
+
+## To check the user is added or not.
+getent passwd | grep testuser
+ansible -b -K -m user -a 'name=testuser state=absent' all
+
+
+
+
+
+
